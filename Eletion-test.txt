@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Myanmar 2025–2026 General Election</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background-color: #b22222; /* dark red - Myanmar flag inspired */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2em;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    #login-section {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    #login-section input {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      font-size: 1.1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #b22222;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #8b1a1a;
+    }
+    #main-content {
+      display: none;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #b22222;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+    ul {
+      line-height: 1.6;
+    }
+    iframe {
+      width: 100%;
+      height: 700px;          /* ← change height as needed */
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #333;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login screen (shown first) -->
+  <div id="login-section">
+    <h2>Access Myanmar Election Dashboard</h2>
+    <p>This page contains detailed or embedded content about the 2025–2026 Myanmar general election.<br>Please enter the password.</p>
+    <input type="password" id="password" placeholder="Enter password" />
+    <button onclick="checkPassword()">Login</button>
+    <p id="error-msg" style="color:red; margin-top:15px; display:none;">Incorrect password. Try again.</p>
+  </div>
+
+  <!-- Main content (hidden until correct password) -->
+  <div id="main-content">
+
+    <header>
+      <h1>Myanmar General Election 2025–2026</h1>
+      <p>Phased polls held December 2025 – January 2026 under military administration</p>
+    </header>
+
+    <div class="container">
+
+      <div class="section">
+        <h2>Overview</h2>
+        <p>The 2025–2026 Myanmar general election was conducted in three phases (28 Dec 2025, 11 Jan 2026, 25 Jan 2026) by the military junta following the 2021 coup. Voting occurred only in selected townships due to ongoing civil conflict. Many opposition parties were banned or dissolved, and the process was widely described by the UN, Western governments, and human rights groups as a <strong>"sham"</strong> election aimed at legitimizing military rule rather than reflecting genuine democratic will.</p>
+        <p>The military-backed <strong>Union Solidarity and Development Party (USDP)</strong> won an overwhelming majority in both houses of parliament, virtually guaranteeing continued control by Senior General Min Aung Hlaing and allies.</p>
+      </div>
+
+      <div class="section">
+        <h2>Key Reported Facts</h2>
+        <ul>
+          <li><strong>Phases</strong>: Dec 28, 2025 → Jan 11, 2026 → Jan 25, 2026</li>
+          <li><strong>Winner</strong>: USDP (military proxy) – landslide victory</li>
+          <li><strong>Turnout</strong>: Around 50–55% in contested areas (much lower than 2020)</li>
+          <li><strong>Context</strong>: Held amid civil war; large areas had no voting; thousands of political prisoners; heavy repression</li>
+          <li><strong>International view</strong>: Criticized as illegitimate by UN, EU, US, Human Rights Watch, etc.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Embedded Content / Dashboard</h2>
+        <p>Paste your iframe embed code (Power BI, Tableau, YouTube, PDF viewer, election results page, etc.) inside the placeholder below.</p>
+
+        <!-- === PASTE YOUR IFRAME HERE ===================================== -->
+        <iframe 
+          src="about:blank" 
+          title="Embedded Myanmar Election Content (replace src)"
+          allowfullscreen>
+        </iframe>
+        <!-- ================================================================ -->
+
+        <p style="margin-top:15px; font-size:0.9em; color:#666;">
+          <strong>Quick examples to paste:</strong><br>
+          Power BI: <code>src="https://app.powerbi.com/reportEmbed?reportId=xxxx..."</code><br>
+          YouTube: <code>src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1"</code>
+        </p>
+      </div>
+
+    </div>
+
+    <footer>
+      <p>Informational page • Last updated: March 2026 • Client-side password protection only (not cryptographically secure)</p>
+    </footer>
+
+  </div>
+
+  <script>
+    // CHANGE YOUR PASSWORD HERE ↓↓↓
+    const CORRECT_PASSWORD = "myanmar2026";   // ←←← Change this to whatever you want
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const error = document.getElementById("error-msg");
+
+      if (input === CORRECT_PASSWORD) {
+        document.getElementById("login-section").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        error.style.display = "block";
+      }
+    }
+
+    // Optional: allow Enter key to submit
+    document.getElementById("password").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") {
+        checkPassword();
+      }
+    });
+  </script>
+
+</body>
+</html>
